@@ -1,129 +1,167 @@
-export default function Home() {
-  const products = [
-    {
-      name: 'Floral Blossom',
-      desc: 'Aroma floral dulce y delicado',
-      price: '$28.900 COP',
-      image:
-        'https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      name: 'Garden Fresh',
-      desc: 'Aroma fresco y natural',
-      price: '$28.900 COP',
-      image:
-        'https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      name: 'Sweet Flowers',
-      desc: 'Aroma floral suave y envolvente',
-      price: '$28.900 COP',
-      image:
-        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop',
-    },
-  ]
 
-  return (
-    <main className="bg-[#f7f2ed] text-[#2d1b2e] min-h-screen">
-      <header className="border-b border-[#e8ddd1] bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div>
-            <h1 className="text-5xl tracking-[10px] font-light">
-              CAPRIELLE
-            </h1>
-            <p className="text-sm tracking-[4px] text-[#7a5a7f] mt-2">
-              AROMAS QUE TRANSFORMAN ESPACIOS
-            </p>
-          </div>
 
-          <a
-            href="https://wa.me/573000000000"
-            className="bg-[#6e3f76] text-white px-5 py-3 rounded-full"
-          >
-            Asesoría WhatsApp
-          </a>
-        </div>
-      </header>
-
-      <section className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 className="text-6xl leading-tight font-light">
-            Aromas que transforman tus espacios
-          </h2>
-
-          <p className="mt-6 text-lg text-[#6f6262]">
-            Perfumes y aromatizantes premium para hogar.
-          </p>
-
-          <button className="mt-8 bg-[#6e3f76] text-white px-8 py-4 rounded-full text-lg">
-            Ver catálogo
-          </button>
-        </div>
-
-        <img
-          src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1400&auto=format&fit=crop"
-          className="rounded-[40px] shadow-2xl"
-        />
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="flex items-center justify-between mb-10">
-          <h3 className="text-4xl font-light">
-            Colección Floral Artesanal
-          </h3>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div
-              key={product.name}
-              className="bg-white rounded-[30px] overflow-hidden shadow-lg"
-            >
-              <img
-                src={product.image}
-                className="h-[350px] w-full object-cover"
-              />
-
-              <div className="p-6">
-                <h4 className="text-2xl">{product.name}</h4>
-
-                <p className="mt-2 text-[#746868]">{product.desc}</p>
-
-                <p className="mt-4 text-xl font-semibold">
-                  {product.price}
-                </p>
-
-                <button className="mt-6 w-full bg-[#6e3f76] text-white py-3 rounded-full">
-                  Agregar al carrito
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-[#efe6ef] py-20">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h3 className="text-5xl font-light">
-            ¿Necesitas ayuda para elegir?
-          </h3>
-
-          <p className="mt-5 text-lg text-[#655959]">
-            Te asesoramos personalmente por WhatsApp.
-          </p>
-
-          <a
-            href="https://wa.me/573000000000"
-            className="inline-block mt-8 bg-[#6e3f76] text-white px-8 py-4 rounded-full"
-          >
-            Escribir ahora
-          </a>
-        </div>
-      </section>
-
-      <footer className="py-10 text-center text-[#6b5f5f] bg-white">
-        © 2026 Caprielle — Todos los derechos reservados.
-      </footer>
-    </main>
-  )
+header p{
+    color:#777;
+    margin-top:5px;
 }
+
+nav{
+    margin-top:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.hero{
+    height:400px;
+    background:url('https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=1400&auto=format&fit=crop') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    background:rgba(0,0,0,.4);
+    padding:30px;
+    border-radius:15px;
+}
+
+.hero h2{
+    font-size:3rem;
+}
+
+.catalogo{
+    padding:50px 20px;
+}
+
+.catalogo h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#5a3d5c;
+}
+
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.producto{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.producto img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.info{
+    padding:15px;
+    text-align:center;
+}
+
+.info h3{
+    margin-bottom:10px;
+}
+
+.precio{
+    color:#5a3d5c;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+button{
+    background:#5a3d5c;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+footer{
+    background:#5a3d5c;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Aromas Naturales</h1>
+    <p>Fragancias que transforman espacios</p>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Catálogo</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Transforma tus espacios</h2>
+        <p>Fragancias únicas para cada momento de tu vida</p>
+    </div>
+</section>
+
+<section class="catalogo">
+    <h2>Nuestros Productos</h2>
+
+    <div class="productos">
+
+        <div class="producto">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+            <div class="info">
+                <h3>Lavanda</h3>
+                <p>Aroma relajante y elegante.</p>
+                <div class="precio">$28.900</div>
+                <button>Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop">
+            <div class="info">
+                <h3>Rosas</h3>
+                <p>Fragancia floral y romántica.</p>
+                <div class="precio">$28.900</div>
+                <button>Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop">
+            <div class="info">
+                <h3>Jazmín</h3>
+                <p>Dulce, fresco y natural.</p>
+                <div class="precio">$28.900</div>
+                <button>Agregar al carrito</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Aromas Naturales - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
